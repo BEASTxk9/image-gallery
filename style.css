@@ -1,0 +1,33 @@
+#image-container{
+    background-color: #171717;
+}
+
+#image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 50rem;
+    margin-inline: auto;
+    transition: all 350ms ease-in-out;
+}
+
+#image-gallery > img {
+    width: calc(33.33% - 10px); /* Adjust the width based on your design, minus margins */
+    margin-bottom: 10px; /* Add margin between rows */
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+
+    box-shadow: rgba(255, 255, 255, 0.637) 0px 0px 5px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+    transition: transform 350ms ease, opacity 350ms linear;
+}
+
+
+
+#image-gallery:has(img:hover) > img:not(:hover){
+    scale: 0.98;
+    opacity: .7;
+    transition: all 350ms ease-in-out;
+}
